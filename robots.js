@@ -31,11 +31,10 @@ app.get('/', function (req, res, next) {
 //   res.render('user', user);
 // });
 
-app.get('/users/:id', function(req, res){
+app.get('/users/:id', function(req, res, next){
   let id = req.params.id;
   let actualID = id - 1;
   let user = data.users[actualID];
-
   res.render('user', user);
 });
 
